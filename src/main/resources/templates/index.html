@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Time Checker</title>
+    <style>
+        body { text-align: center; font-family: Arial; }
+        .form-container {
+            margin: 50px auto;
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px #aaa;
+        }
+        input {
+            width: 80%;
+            margin: 5px;
+            padding: 5px;
+        }
+        button {
+            margin: 10px;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2 style="color: blue;">Date Time Checker</h2>
+
+    <form th:action="@{/check}" method="post">
+        <label>Month</label><br>
+        <input type="number" name="month" required><br>
+        <label>Year</label><br>
+        <input type="number" name="year" required><br>
+
+        <button type="reset">Clear</button>
+        <button type="submit">Check</button>
+    </form>
+
+    <hr>
+    <p th:if="${result}" th:text="${result}"
+       th:style="${result.startsWith('Month') || result.startsWith('February')} ? 'color:green' : 'color:red'"></p>
+</div>
+</body>
+</html>

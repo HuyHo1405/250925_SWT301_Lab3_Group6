@@ -8,4 +8,10 @@ public class DateTimeModel {
     private String month;
     private String year;
     private String message;
+
+    public DateTimeModel(String year, String month, String day) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
 }

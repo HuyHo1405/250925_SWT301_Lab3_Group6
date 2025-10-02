@@ -19,6 +19,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: 'maven'
+    
+    - name: Set Java version for Maven
+      run: |
+        echo "JAVA_HOME=$JAVA_HOME"
+        echo "Using Java version:"
+        java -version
         
     - name: Build with Maven
       run: mvn -B package --file demo/pom.xml

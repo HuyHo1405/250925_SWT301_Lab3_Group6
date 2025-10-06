@@ -11,4 +11,5 @@ public class Dtc {
     private String country;
     private String password;
     private String confirmPassword;
+    private String line;
 }
